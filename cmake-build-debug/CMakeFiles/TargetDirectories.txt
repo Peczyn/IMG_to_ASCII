@@ -1,0 +1,3 @@
+/Users/marcin/CLionProjects/IMG_to_ASCII/cmake-build-debug/CMakeFiles/IMG_to_ASCII.dir
+/Users/marcin/CLionProjects/IMG_to_ASCII/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/marcin/CLionProjects/IMG_to_ASCII/cmake-build-debug/CMakeFiles/rebuild_cache.dir

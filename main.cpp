@@ -14,26 +14,16 @@ using namespace cv;
 
 
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        cerr << "Użycie: " << argv[0] << " <nazwa_pliku.png>" << endl;
-        return 1;
-    }
+int main() {
 
-//    char cwd[PATH_MAX];
-//
-//    if (getcwd(cwd, sizeof(cwd)) != NULL) {
-//        std::cout << "Current working directory: " << cwd << std::endl;
-//    } else {
-//        perror("getcwd() error");
-//        return 1;
-//    }
-//    return 0;
+
+    string nazwa;
+    cout << "Podaj nazwe pliku z foldeu images: ";
+    cin >> nazwa;
 
 
 
-
-    string pathF = "/images/"+(string)argv[1];
+    string pathF = "../images/"+nazwa;
     Mat img = imread(pathF);
 
     cvtColor(img, img, COLOR_BGR2GRAY);
@@ -43,7 +33,7 @@ int main(int argc, char *argv[]) {
     waitKey();
 
 
-    string txtpathBig = "/Users/marcin/CLionProjects/IMG_to_ASCII/results/ASCII_BIG_"+(string)argv[1]+".txt";
+    string txtpathBig = "../results/"+nazwa+"_ASCII_BIG.txt";
     ofstream big(txtpathBig);
     for(int j=1; j+1<img.size().height; j+=2)
     {
@@ -66,20 +56,20 @@ int main(int argc, char *argv[]) {
             sum/=9;
 
 
-            if(sum>241) text+='@';
-            else if(sum>224) text+='#';
-            else if(sum>207) text+='&';
-            else if(sum>190) text+='0';
-            else if(sum>173) text+='O';
-            else if(sum>156) text+='U';
-            else if(sum>139) text+='*';
-            else if(sum>122) text+='o';
-            else if(sum>105) text+='+';
-            else if(sum>88) text+='-';
-            else if(sum>71) text+='"';
-            else if(sum>54) text+="'";
-            else if(sum>37) text+=',';
-            else if(sum>20) text+='.';
+            if(sum>238) text+='@';
+            else if(sum>221) text+='#';
+            else if(sum>204) text+='&';
+            else if(sum>187) text+='0';
+            else if(sum>170) text+='O';
+            else if(sum>153) text+='U';
+            else if(sum>136) text+='*';
+            else if(sum>119) text+='o';
+            else if(sum>102) text+='+';
+            else if(sum>85) text+='-';
+            else if(sum>68) text+='"';
+            else if(sum>51) text+="'";
+            else if(sum>34) text+=',';
+            else if(sum>17) text+='.';
             else text+=' ';
         }
         big << text << endl;
@@ -90,7 +80,7 @@ int main(int argc, char *argv[]) {
 
 
 
-    ofstream small("/Users/marcin/CLionProjects/IMG_to_ASCII/results/ASCII_SMALL_"+(string)argv[1]+".txt");
+    ofstream small("../results/"+nazwa+"_ascii_small.txt");
 
     for(int j=4; j+4<img.size().height; j+=8)
     {
@@ -118,20 +108,20 @@ int main(int argc, char *argv[]) {
             }
             sum/=81;
 
-            if(sum>241) text+='@';
-            else if(sum>224) text+='#';
-            else if(sum>207) text+='&';
-            else if(sum>190) text+='0';
-            else if(sum>173) text+='O';
-            else if(sum>156) text+='U';
-            else if(sum>139) text+='*';
-            else if(sum>122) text+='o';
-            else if(sum>105) text+='+';
-            else if(sum>88) text+='-';
-            else if(sum>71) text+='"';
-            else if(sum>54) text+="'";
-            else if(sum>37) text+=',';
-            else if(sum>20) text+='.';
+            if(sum>238) text+='@';
+            else if(sum>221) text+='#';
+            else if(sum>204) text+='&';
+            else if(sum>187) text+='0';
+            else if(sum>170) text+='O';
+            else if(sum>153) text+='U';
+            else if(sum>136) text+='*';
+            else if(sum>119) text+='o';
+            else if(sum>102) text+='+';
+            else if(sum>85) text+='-';
+            else if(sum>68) text+='"';
+            else if(sum>51) text+="'";
+            else if(sum>34) text+=',';
+            else if(sum>17) text+='.';
             else text+=' ';
         }
         small << text << endl;

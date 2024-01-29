@@ -18,14 +18,14 @@ int main() {
 
 
     string nazwa;
-    cout << "Podaj nazwe pliku z foldeu images: ";
+    cout << "Podaj nazwe pliku z foldeu images:  ";
     cin >> nazwa;
 
 
 
     string pathF = "../images/"+nazwa;
     Mat img = imread(pathF);
-    resize(img, img, Size(),0.5,0.5);
+//    resize(img, img, Size(),0.5,0.5);
 
     cvtColor(img, img, COLOR_BGR2GRAY);
     //    GaussianBlur(img2,img2, Size(7, 7), 7, 0);
@@ -65,7 +65,7 @@ int main() {
 
             sum/=9;
 
-            ASCII1text+= ASCII1[(sum-1)/17];
+            ASCII1text+= ASCII1[(sum-5)/17];
             ASCII2text+= ASCII2[(sum-10)/9];
 
         }
@@ -113,7 +113,7 @@ int main() {
             sum/=81;
 
 
-            ASCII1text+= ASCII1[(sum-1)/17];
+            ASCII1text+= ASCII1[(sum-5)/17];
             ASCII2text+= ASCII2[(sum-10)/9];
 
         }

@@ -25,6 +25,7 @@ int main() {
 
     string pathF = "../images/"+nazwa;
     Mat img = imread(pathF);
+    resize(img, img, Size(),0.5,0.5);
 
     cvtColor(img, img, COLOR_BGR2GRAY);
     //    GaussianBlur(img2,img2, Size(7, 7), 7, 0);
@@ -33,11 +34,19 @@ int main() {
     waitKey();
 
 
-    string txtpathBig = "../results/"+nazwa+"_ASCII_BIG.txt";
-    ofstream big(txtpathBig);
+    string ASCII1 = " .,'\"-+o*UO0&#@"; //15 znakow
+    string ASCII2 = " _.,-=+:;cba!?0123456789$W#@"; //28 znakow
+
+
+    string file_path_ASCII_1_big = "../results/"+nazwa+"_ASCII_BIG_1.txt";
+    ofstream ASCII1big(file_path_ASCII_1_big);
+
+    string file_path_ASCII_2_big = "../results/"+nazwa+"_ASCII_BIG_2.txt";
+    ofstream ASCII2big(file_path_ASCII_2_big);
     for(int j=1; j+1<img.size().height; j+=2)
     {
-        string text = "";
+        string ASCII1text = "";
+        string ASCII2text = "";
         for(int i=1; i+1<img.size().width; i+=2)
         {
             int sum = 0;
@@ -53,38 +62,33 @@ int main() {
             sum+= (int)img.at<uchar>(j+1,i);
             sum+= (int)img.at<uchar>(j+1,i+1);
             sum+= (int)img.at<uchar>(j+1,i-1);
+
             sum/=9;
 
+            ASCII1text+= ASCII1[(sum-1)/17];
+            ASCII2text+= ASCII2[(sum-10)/9];
 
-            if(sum>238) text+='@';
-            else if(sum>221) text+='#';
-            else if(sum>204) text+='&';
-            else if(sum>187) text+='0';
-            else if(sum>170) text+='O';
-            else if(sum>153) text+='U';
-            else if(sum>136) text+='*';
-            else if(sum>119) text+='o';
-            else if(sum>102) text+='+';
-            else if(sum>85) text+='-';
-            else if(sum>68) text+='"';
-            else if(sum>51) text+="'";
-            else if(sum>34) text+=',';
-            else if(sum>17) text+='.';
-            else text+=' ';
         }
-        big << text << endl;
-
+        ASCII1big << ASCII1text << endl;
+        ASCII2big << ASCII2text << endl;
 
     }
 
 
 
 
-    ofstream small("../results/"+nazwa+"_ascii_small.txt");
+    string file_path_ASCII_1_small = "../results/"+nazwa+"_ascii_small_1.txt";
+    ofstream ASCII1small(file_path_ASCII_1_small);
+
+    string file_path_ASCII_2_small = "../results/"+nazwa+"_ascii_small_2.txt";
+    ofstream ASCII2small(file_path_ASCII_2_small);
 
     for(int j=4; j+4<img.size().height; j+=8)
     {
-        string text="";
+        string ASCII1text = "";
+        string ASCII2text = "";
+
+
         for(int i=4; i+4<img.size().width; i+=8)
         {
             int sum = 0;
@@ -108,26 +112,16 @@ int main() {
             }
             sum/=81;
 
-            if(sum>238) text+='@';
-            else if(sum>221) text+='#';
-            else if(sum>204) text+='&';
-            else if(sum>187) text+='0';
-            else if(sum>170) text+='O';
-            else if(sum>153) text+='U';
-            else if(sum>136) text+='*';
-            else if(sum>119) text+='o';
-            else if(sum>102) text+='+';
-            else if(sum>85) text+='-';
-            else if(sum>68) text+='"';
-            else if(sum>51) text+="'";
-            else if(sum>34) text+=',';
-            else if(sum>17) text+='.';
-            else text+=' ';
+
+            ASCII1text+= ASCII1[(sum-1)/17];
+            ASCII2text+= ASCII2[(sum-10)/9];
+
         }
-        small << text << endl;
+        ASCII1small << ASCII1text << endl;
+        ASCII2small << ASCII2text << endl;
 
     }
-    return 0;
 
+    return 0;
 }
 

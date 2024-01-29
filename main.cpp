@@ -17,13 +17,13 @@ using namespace cv;
 int main() {
 
 
-    string nazwa;
+    string fileName;
     cout << "Podaj nazwe pliku z foldeu images:  ";
-    cin >> nazwa;
+    cin >> fileName;
 
 
 
-    string pathF = "../images/"+nazwa;
+    string pathF = "../images/" + fileName;
     Mat img = imread(pathF);
 //    resize(img, img, Size(),0.5,0.5);
 
@@ -38,10 +38,10 @@ int main() {
     string ASCII2 = " _.,-=+:;cba!?0123456789$W#@"; //28 znakow
 
 
-    string file_path_ASCII_1_big = "../results/"+nazwa+"_ASCII_BIG_1.txt";
+    string file_path_ASCII_1_big = "../results/" + fileName + "_ASCII_BIG_1.txt";
     ofstream ASCII1big(file_path_ASCII_1_big);
 
-    string file_path_ASCII_2_big = "../results/"+nazwa+"_ASCII_BIG_2.txt";
+    string file_path_ASCII_2_big = "../results/" + fileName + "_ASCII_BIG_2.txt";
     ofstream ASCII2big(file_path_ASCII_2_big);
     for(int j=1; j+1<img.size().height; j+=2)
     {
@@ -77,10 +77,10 @@ int main() {
 
 
 
-    string file_path_ASCII_1_small = "../results/"+nazwa+"_ascii_small_1.txt";
+    string file_path_ASCII_1_small = "../results/" + fileName + "_ascii_small_1.txt";
     ofstream ASCII1small(file_path_ASCII_1_small);
 
-    string file_path_ASCII_2_small = "../results/"+nazwa+"_ascii_small_2.txt";
+    string file_path_ASCII_2_small = "../results/" + fileName + "_ascii_small_2.txt";
     ofstream ASCII2small(file_path_ASCII_2_small);
 
     for(int j=4; j+4<img.size().height; j+=8)

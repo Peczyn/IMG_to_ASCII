@@ -1,6 +1,6 @@
-Programme to convert image files to ASCII art using c++ and openCV.
+Simple openCV project that converts image files to ASCII art.
 
-2 different results for 2 different ASCII characters sets.
+2 different results for 2 different ASCII character sets.
 
 
 

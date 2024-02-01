@@ -15,13 +15,9 @@ using namespace cv;
 
 
 int main() {
-
-
     string fileName;
-    cout << "Podaj nazwe pliku z foldeu images:  ";
+    cout << "Podaj nazwe pliku z folderu images:  ";
     cin >> fileName;
-
-
 
     string pathF = "../images/" + fileName;
     Mat img = imread(pathF);
@@ -30,8 +26,9 @@ int main() {
     cvtColor(img, img, COLOR_BGR2GRAY);
     //    GaussianBlur(img2,img2, Size(7, 7), 7, 0);
 
-    imshow("x",img);
-    waitKey();
+
+//    imshow("x",img);
+//    waitKey();
 
 
     string ASCII1 = " .,'\"-+o*UO0&#@"; //15 znakow
@@ -121,6 +118,9 @@ int main() {
         ASCII2small << ASCII2text << endl;
 
     }
+
+    cout << "Twoje pliki znajdują się w folderze results." << endl;
+    cout << "Polecam oddalić dla lepszego efektu!" << endl;
 
     return 0;
 }

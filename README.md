@@ -48,20 +48,14 @@ This program takes an input image, processes it using OpenCV, and then converts 
 To convert an image to ASCII art, use the following command:
 
 ```bash
-./image_to_ascii <path_to_image> <output_width> <density>
+./image_to_ascii 
 ```
-
+<!---<path_to_image> <output_width> <density>
 - `<path_to_image>`: Path to the input image file.
 - `<output_width>`: Desired width of the output ASCII art (in characters).
-- `<density>`: Density of ASCII characters used (1-100, default is 10).
+- `<density>`: Density of ASCII characters used (1-100, default is 10).--->
 
-For example:
-
-```bash
-./image_to_ascii input.jpg 100 10
-```
-
-This will create an ASCII representation of `input.jpg` with a width of 100 characters and a density of 10.
+Then you need to write a path of an image in images folder.
 
 ## Examples
 

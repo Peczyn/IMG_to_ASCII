@@ -27,13 +27,13 @@ This program takes an input image, processes it using OpenCV, and then converts 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/image-to-ascii.git
+   git clone https://github.com/Peczyn/IMG_to_ASCII
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd image-to-ascii
+   cd IMG_to_ASCII
    ```
 
 3. Build the project using CMake:

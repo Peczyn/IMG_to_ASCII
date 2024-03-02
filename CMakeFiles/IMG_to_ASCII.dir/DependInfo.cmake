@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/marcin/CLionProjects/IMG_to_ASCII/main.cpp" "CMakeFiles/IMG_to_ASCII.dir/main.cpp.o" "gcc" "CMakeFiles/IMG_to_ASCII.dir/main.cpp.o.d"
+  "/Users/marcin/Desktop/IMG_to_ASCII/main.cpp" "CMakeFiles/IMG_to_ASCII.dir/main.cpp.o" "gcc" "CMakeFiles/IMG_to_ASCII.dir/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
